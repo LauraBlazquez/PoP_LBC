@@ -1,4 +1,4 @@
-﻿namespace PoPRefactoring;
+namespace PoPRefactoring;
 
 public class PopProject
 {
@@ -49,7 +49,8 @@ public class PopProject
             case 7:
             case 8:
             case 10:
-            case 12: totalDaysMonth = 31; 
+            case 12:
+                totalDaysMonth = 31;
                 break;
             case 4:
             case 6:
