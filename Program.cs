@@ -9,7 +9,7 @@ public class PopProject
         dia = Convert.ToInt32 (Console.ReadLine ());
         mes = Convert.ToInt32 (Console.ReadLine ());
         any = Convert.ToInt32 (Console.ReadLine ());
-        Console.WriteLine(Valida(dia, mes, any) ? "El format no és correcte" : "La data és correcta.");
+        Console.WriteLine (Valida (dia, mes, any) ? "El format no és correcte" : "La data és correcta.");
     }
 
     public static bool Valida (int day, int month, int year)
@@ -23,7 +23,8 @@ public class PopProject
             case 7:
             case 8:
             case 10:
-            case 12: totalDaysMonth = 31; 
+            case 12:
+                totalDaysMonth = 31;
                 break;
             case 4:
             case 6:
