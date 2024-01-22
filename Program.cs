@@ -4,12 +4,38 @@ public class PopProject
 {
     public static void Main ()
     {
+        const string Menu = "\n\nA. Saltar\nB. Córrer\nC. Ajupir-se\nD. Amagar-se\n\n";
+        const string MenuError = "Opció incorrecta. Torna a provar:\n";
+        char opcio;
         int dia, mes, any;
         Console.WriteLine ("Introdueix el dia, mes i any");
         dia = Convert.ToInt32 (Console.ReadLine ());
         mes = Convert.ToInt32 (Console.ReadLine ());
         any = Convert.ToInt32 (Console.ReadLine ());
-        Console.WriteLine(Valida(dia, mes, any) ? "El format no és correcte" : "La data és correcta.");
+        Console.WriteLine(Valida(dia, mes, any) ? "La data és correcta." : "El format no és correcte");
+    
+        Console.WriteLine(Menu);
+        do
+        {
+            opcio = Convert.ToChar(Console.ReadLine ());
+            if (!Valida(opcio)) Console.WriteLine (MenuError);
+        } while (!Valida (opcio));
+
+        switch (opcio)
+        {
+            case 'A':
+            case 'a': Console.WriteLine ("Salta"); 
+                break;
+            case 'B':
+            case 'b': Console.WriteLine ("Corre"); 
+                break;
+            case 'C':
+            case 'c': Console.WriteLine ("S'ajup"); 
+                break;
+            case 'D':
+            case 'd': Console.WriteLine ("S'amaga"); 
+                break;
+        }   
     }
 
     public static bool Valida (int day, int month, int year)
@@ -37,5 +63,11 @@ public class PopProject
         }
         if (day > totalDaysMonth) return false;
         else return true;
+    }
+
+    public static bool Valida (char opcio)
+    {
+        const int AsciiA = 65, AsciiD = 68, Asciia = 97, Asciid = 100;
+        return (opcio >= AsciiA && opcio <= AsciiD) || (opcio >= Asciia && opcio <= Asciid);
     }
 }
